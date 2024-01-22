@@ -1,0 +1,99 @@
+
+<div class="bodyLogin">
+  <div class="container">
+      <div class="row">
+          <div class="col s12 m6">
+            <div class="card  darken-2 center-align ">
+              <div class="row ">
+                <div class="card-content">
+                      <span class="card-title center-align" >
+  
+                          Xtreme
+                      </span>
+                      <div class="col s6 ">
+                          <form action="">   
+                              <div class="input-field col s12">
+                                  <label class="active" for="CORREO">CORREO</label>
+                                  <input class="validate"  type="email" [(ngModel)]="usuario.correo" placeholder="correo" name="CORREO" >
+                              </div>                        
+                              <div class="input-field col s12">
+                                  <label class="active" for="Contrasena" >CONTRASEÑA</label>
+                                  <input class="validate" type="password" [(ngModel)]="usuario.contrasena" placeholder="contrasena" name="contraseña"  >
+                              </div>
+                              <div class="col s6 ">
+                              <a (click)="entrar()"  class="waves-effect waves-light btn">Iniciar sesíon</a>
+                              </div>
+                              <div class="col s6">
+                              <a (click)="Reg()" class="waves-effect waves-light btn">Registrate</a>
+                              </div>
+                          </form> 
+                      </div>
+                      <div class="card-image col s6 ">
+                          <img src="assets/log.png" alt="Xtreme">
+                      </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div  id="Registrar" class="modal">
+  <div class="modal-content">
+    <div class="center-align">
+      <div class="col s6 m6 center-align">
+        <div class="card  darken-1 center-align">
+          <div class="row">
+            <div class="card-content">
+  
+              <span class="card-title center-align" >Registrate</span>
+              <div class="">
+                  
+                    <div class="row">
+                      <div class="input-field col s6">
+                        <label class="validate"  for="first_name">Nombre</label>
+                        <input  id="first_name" type="text" class="validate" [(ngModel)]="usuario.Nombre"  name="contraseña"  >
+                        
+                      </div>
+                      <div class="input-field col s6">
+                        <input id="last_name" type="text" class="validate"[(ngModel)]="usuario.Apellido"  name="contraseña">
+                        <label class="validate" for="last_name">Apellido</label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="input-field col s12">
+                        <label class="validate" for="password">Contrasena</label>
+                        <input id="password" type="password" class="validate" [(ngModel)]="usuario.contrasena" value=" " >
+                       
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="input-field col s12">
+                        <label class="validate" for="email">Correo</label>
+                        <input id="email" type="email" class="validate" [(ngModel)]="usuario.correo" name="correo">
+                     
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="input-field col s12">
+                        <input id="Telefono" type="tel" class="validate"[(ngModel)]="usuario" Name="Telefono">
+                        <label class="validate" for="Telefono">Telefono</label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="input-field col s12">
+                        <input  id="Fecha" type="Date" class="validate" [(ngModel)]="usuario.FechaNacimiento" name="FechaNacimiento">
+                        <label class="validate" for="Fecha">Fecha de nacimiento</label>
+                      </div>
+                    </div>
+                    <a (click)="check()" class="waves-effect waves-light btn" >ENVIAR</a>
+                </div>  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+</div>
+

@@ -1,0 +1,38 @@
+.bodyLogin {
+    background-color: #f0f0f0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to right, #3e4041, #bdbfc1); 
+    color: #fff; 
+}
+
+.card-title {
+    font-family: AvantGarde;
+    font-size: 40px;
+    font-weight: bold; 
+    font-style: italic;
+}
+
+.input-field label {
+    color: #fff;
+}
+
+.card-image {
+    display: flex;
+    align-items: center;
+
+    
+}
+.validate {
+    color: #fff;
+    font-family: 'Times New Roman', Times, serif;
+}
+

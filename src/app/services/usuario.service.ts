@@ -32,4 +32,16 @@ constructor(private http:HttpClient) {}
   listOne(id : any) {
     return this.http.get(`${environment.API_URL}usuarios/obtenerUsuario/${id}`);
   }
+  act(UsuarioID:any, Nombre:any, Apellido:any, correo:any, contrasena:any, FechaNacimiento:any, Telefono:any){
+    return this.http.put(`${environment.API_URL}usuarios/actualizarUsuario/${UsuarioID}`,
+      {
+        "Nombre": Nombre,
+        "Apellido": Apellido,
+        "correo": correo,
+        "contrasena": contrasena,
+        "FechaNacimiento": FechaNacimiento,
+        "Telefono": Telefono
+      });
+  
+}
 }

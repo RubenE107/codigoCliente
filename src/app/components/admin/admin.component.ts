@@ -126,4 +126,14 @@ ActualizarFecha(date?:any){
     console.log(this.usuario);
   }
 }
+act(id:any)
+{
+ 
+    this.usuarioService.act(this.usuario.UsuarioID,this.usuario.Nombre,this.usuario.Apellido,this.usuario.correo,this.usuario.Contrasena,this.usuario.FechaNacimiento,this.usuario.Telefono).subscribe((resUsuario: any) => {
+    
+      $("#Editar").modal("close");
+    });
+}
+
+
 }

@@ -14,7 +14,7 @@
           </button>
                 </a></td>
   
-        <td><a (click)="Edit(usuario.UsuarioID)">
+        <td><a (click)="act(usuario.UsuarioID)">
 
           <button class="btn-delete" type="submit" name="action">
             <i class="material-icons">create</i>
@@ -27,7 +27,7 @@
   
 
 
-    <div  id="Editar" class="modal">
+    <div  id="Actualizar" class="modal">
       <div class="modal-content">
         <div class="center-align">
           <div class="col s6 m6 center-align">
@@ -69,14 +69,14 @@
                             <label class="validate" for="Telefono">Telefono</label>
                           </div>
                         </div>
-                        <div class="row col s12">
+                        <!--div class="row col s12">
                           <label>Rol</label>
                           <select [(ngModel)]='usuario.id' class="browser-default">
                           <option *ngFor="let rol of rol" [value]="rol.id_Rol">
                           {{rol.nombre}}
                           </option>
                           </select>
-                          </div>
+                          </div-->
                         <div class="row">
                           <div class="input-field col s12">
                             <input  id="Fecha" type="Date"  [(ngModel)]="usuario.FechaNacimiento" #fechaD (change)="ActualizarFecha(fechaD.value)" class="datepicker">

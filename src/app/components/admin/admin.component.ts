@@ -76,8 +76,7 @@ export class AdminComponent implements OnInit{
             icon: "success"
           }).then(() => {
             // Recarga automáticamente la página después de cerrar Swal
-            this.router.navigate(['principal/admin']);
-          });
+            location.reload();});
         },
         err => console.error(err)
         );
@@ -114,8 +113,7 @@ check(){
   console.log("Error, campos vacios");
   }else{console.log("Usuario creado correctamente");
   $("#Editar").modal("close");
-  this.router.navigate(['principal/admin']);
-  
+location.reload();  
 }
 }
 initDatepicker(date?:any){
@@ -160,8 +158,7 @@ act(usuario_id:any){
     console.log("Usuario creado correctamente");
   this.usuarioService.act(usuario_id,this.usuario.Nombre,this.usuario.Apellido,this.usuario.correo,this.usuario.Contrasena,this.usuario.FechaNacimiento,this.usuario.Telefono).subscribe((resUsuario: any) => {
   $("#Editar1").modal("close");
-  this.router.navigate(['principal/admin']);
-
+location.reload();
 });
 
 }

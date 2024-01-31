@@ -62,11 +62,7 @@ export class LoginComponent implements  OnInit{
         {
           this.router.navigate(['principal/admin'], navigationExtras);
         }
-        if(resusuario.RolID == 2)
-        {
-          //this.router.navigateByUrl('/tutor');
-        }
-        if(resusuario.RolID == 3)
+        if(resusuario.RolID == (3 || 2))
         {
           this.router.navigate(['principal/usuario'], navigationExtras);
         }

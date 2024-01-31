@@ -27,7 +27,7 @@
   
 
 
-    <div  id="Actualizar" class="modal">
+    <div  id="Editar" class="modal">
       <div class="modal-content">
         <div class="center-align">
           <div class="col s6 m6 center-align">
@@ -92,5 +92,71 @@
         </div>
     </div>
   </div>
+  <div  id="Editar1" class="modal">
+    <div class="modal-content">
+      <div class="center-align">
+        <div class="col s6 m6 center-align">
+          <div class="card  darken-1 center-align">
+            <div class="row">
+              <div class="card-content">
     
+                <span class="card-title center-align" >Actualizar</span>
+                <div class="">
+                    
+                      <div class="row">
+                        <div class="input-field col s6">
+                          <label class="active"  for="first_name">Nombre</label>
+                          <input disabled id="first_name" type="text" class="validate" [(ngModel)]="usuario.Nombre"  name="contraseña"  >
+                          
+                        </div>
+                        <div class="input-field col s6">
+                          <input disabled id="last_name" type="text" class="active"[(ngModel)]="usuario.Apellido"  name="contraseña">
+                          <label  class="active" for="last_name">Apellido</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <label class="validate" for="password">Contrasena</label>
+                          <input id="password" type="password" class="validate" [(ngModel)]="usuario.Contrasena" value=" " >
+                         
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <label class="validate" for="email">Correo</label>
+                          <input id="email" type="email" class="validate" [(ngModel)]="usuario.correo" name="correo">
+                       
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <input id="Telefono" type="tel" class="validate"[(ngModel)]="usuario.Telefono" Name="Telefono">
+                          <label class="validate" for="Telefono">Telefono</label>
+                        </div>
+                      </div>
+                      <!--div class="row col s12">
+                        <label>Rol</label>
+                        <select [(ngModel)]='usuario.id' class="browser-default">
+                        <option *ngFor="let rol of rol" [value]="rol.id_Rol">
+                        {{rol.nombre}}
+                        </option>
+                        </select>
+                        </div-->
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <input  id="Fecha" type="Date"  [(ngModel)]="usuario.FechaNacimiento" #fechaD (change)="ActualizarFecha(fechaD.value)" class="datepicker">
+                          <label class="validate" for="Fecha">Fecha de nacimiento</label>
+                        </div>
+                      </div>
+                      <a (click)="check()" class="waves-effect waves-light btn" >ENVIAR</a>
+                  </div>  
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+  
+
   

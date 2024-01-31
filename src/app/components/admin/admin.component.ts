@@ -76,7 +76,7 @@ export class AdminComponent implements OnInit{
             icon: "success"
           }).then(() => {
             // Recarga automáticamente la página después de cerrar Swal
-            location.reload();
+            this.router.navigate(['principal/admin']);
           });
         },
         err => console.error(err)
@@ -114,6 +114,8 @@ check(){
   console.log("Error, campos vacios");
   }else{console.log("Usuario creado correctamente");
   $("#Editar").modal("close");
+  this.router.navigate(['principal/admin']);
+  
 }
 }
 initDatepicker(date?:any){
@@ -128,14 +130,40 @@ ActualizarFecha(date?:any){
     console.log(this.usuario);
   }
 }
-act(id:any)
-{
- 
-    this.usuarioService.act(this.usuario.UsuarioID,this.usuario.Nombre,this.usuario.Apellido,this.usuario.correo,this.usuario.Contrasena,this.usuario.FechaNacimiento,this.usuario.Telefono).subscribe((resUsuario: any) => {
+EditA(usuario_id:any) {
+   
     
-      $("#Editar").modal("close");
-    });
+  console.log(usuario_id);
+  this.usuarioService.existe(this.usuario.correo,this.usuario.Contrasena).subscribe((resusuario: any) =>
+  {
+    this.usuario.id = resusuario.RolID;
+    this.usuario.UsuarioID = resusuario.UsuarioID;
+  });
+
+  this.usuarioService.listOne(usuario_id).subscribe((resUsuario: any) =>
+  {
+    console.log("resusuario: ", resUsuario);
+    this.usuario = resUsuario;  
+    console.log(this.usuario)
+    $('#Editar1').modal();
+    $("#Editar1").modal("open");
+  },
+  err => console.error(err)
+  );
+
 }
+act(usuario_id:any){
+  console.log("usuario: ", this.usuario);
+  if(this.usuario.id=-1 || this.usuario.Nombre === "" || this.usuario.Apellido === "" || this.usuario.correo === "" || this.usuario.Contrasena === "" || this.usuario.FechaNacimiento === null || this.usuario.Telefono ===""){
+  console.log("Error, campos vacios");
+  }else{
+    console.log("Usuario creado correctamente");
+  this.usuarioService.act(usuario_id,this.usuario.Nombre,this.usuario.Apellido,this.usuario.correo,this.usuario.Contrasena,this.usuario.FechaNacimiento,this.usuario.Telefono).subscribe((resUsuario: any) => {
+  $("#Editar1").modal("close");
+  this.router.navigate(['principal/admin']);
 
+});
 
+}
+}
 }

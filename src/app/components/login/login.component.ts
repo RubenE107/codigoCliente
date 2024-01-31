@@ -88,11 +88,11 @@ export class LoginComponent implements  OnInit{
   }else{
     console.log("usuario: ", this.usuario);
     this.usuarioService.create(this.usuario.Nombre,this.usuario.Apellido,this.usuario.correo,this.usuario.Contrasena,this.usuario.FechaNacimiento,this.usuario.Telefono).subscribe((resUsuario: any) => {
-
+      this.router.navigateByUrl("/login");
     },err => console.error(err)
     );
   }
-  this.router.navigateByUrl("/principal/login");
+  
 }
  
  

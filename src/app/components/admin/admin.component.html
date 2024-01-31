@@ -1,20 +1,4 @@
-<ul id="dropdown1" class="dropdown-content">
-    <li><a href="#!">Crear</a></li>
-    <li><a href="#!">eliminar</a></li>
-    <li class="divider"></li>
-    <li><a href="#!">actualizar</a></li>
-  </ul>
-  <nav>
-    <div class="nav-wrapper">
-      <a class="brand-logo">Xtreme<img src="assets/log.png" alt="X"></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a >      <i class="material-icons">contacts</i></a></li>
-        <li><a >      <i class="material-icons">add</i></a></li>
-        <li><a >      <i class="material-icons">report_problem</i></a></li>
-        <li><a >      <i class="material-icons">help</i></a></li>
-      </ul>
-    </div>
-  </nav>
+
   
   <table class="default" *ngIf="usuarios != undefined">
   
@@ -51,7 +35,7 @@
               <div class="row">
                 <div class="card-content">
       
-                  <span class="card-title center-align" >Registrate</span>
+                  <span class="card-title center-align" >Actualizar</span>
                   <div class="">
                       
                         <div class="row">
@@ -68,7 +52,7 @@
                         <div class="row">
                           <div class="input-field col s12">
                             <label class="validate" for="password">Contrasena</label>
-                            <input id="password" type="password" class="validate" [(ngModel)]="usuario.contrasena" value=" " >
+                            <input id="password" type="password" class="validate" [(ngModel)]="usuario.Contrasena" value=" " >
                            
                           </div>
                         </div>
@@ -81,13 +65,13 @@
                         </div>
                         <div class="row">
                           <div class="input-field col s12">
-                            <input id="Telefono" type="tel" class="validate"[(ngModel)]="usuario" Name="Telefono">
+                            <input id="Telefono" type="tel" class="validate"[(ngModel)]="usuario.Telefono" Name="Telefono">
                             <label class="validate" for="Telefono">Telefono</label>
                           </div>
                         </div>
                         <div class="row">
                           <div class="input-field col s12">
-                            <input disabled id="Fecha" type="Date" class="validate" [(ngModel)]="usuario.FechaNacimiento" name="FechaNacimiento">
+                            <input  id="Fecha" type="Date"  [(ngModel)]="usuario.FechaNacimiento" #fechaD (change)="ActualizarFecha(fechaD.value)" class="datepicker">
                             <label class="validate" for="Fecha">Fecha de nacimiento</label>
                           </div>
                         </div>

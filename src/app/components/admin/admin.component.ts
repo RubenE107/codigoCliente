@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { UsuarioService} from './../../services/usuario.service';
 import { Usuario } from '../../models/Usuario';
 import Swal from 'sweetalert2';
@@ -9,7 +9,7 @@ declare var $: any; // Declaración de jQuery
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css']
 })
-export class AdminComponent {
+export class AdminComponent implements OnInit{
   usuarios : Usuario [] = [];
   usuario :Usuario= new Usuario();
   constructor(private usuarioService : UsuarioService, private router: Router){
@@ -25,6 +25,7 @@ export class AdminComponent {
   }
   ngOnInit(): void 
   {
+    $('.dropdown-trigger').dropdown();
     console.log("entro");
     $(document).ready(function()
     {
@@ -90,12 +91,20 @@ export class AdminComponent {
 }
 check(){
   console.log("usuario: ", this.usuario);
-  if(this.usuario.id=-1 || this.usuario.Nombre === "" || this.usuario.Apellido === "" || this.usuario.correo === "" || this.usuario.contrasena === "" || this.usuario.FechaNacimiento === null || this.usuario.Teléfono ===""){
+  if(this.usuario.id=-1 || this.usuario.Nombre === "" || this.usuario.Apellido === "" || this.usuario.correo === "" || this.usuario.Contrasena === "" || this.usuario.FechaNacimiento === null || this.usuario.Telefono ===""){
   console.log("Error, campos vacios");
   }else{console.log("Usuario creado correctamente");}
 }
-
-  metodoPrueba(){
-    console.log(this.usuarios);
+initDatepicker(date?:any){
+  if(date){
+    $("#FechaNacimiento").datepicker({format: 'yyyy-mm-dd',default: date,});
   }
+}
+ActualizarFecha(date?:any){
+  if(date){
+    this.usuario.FechaNacimiento=date;
+    console.log(this.usuario.FechaNacimiento);
+    console.log(this.usuario);
+  }
+}
 }

@@ -45,7 +45,7 @@ export class LoginComponent implements  OnInit{
 
   entrar()
   {
-    this.usuarioService.existe(this.usuario.correo,this.usuario.contrasena).subscribe((resusuario: any) =>
+    this.usuarioService.existe(this.usuario.correo,this.usuario.Contrasena).subscribe((resusuario: any) =>
     {
       this.usuario=resusuario;
       let navigationExtras: NavigationExtras = {
@@ -60,7 +60,7 @@ export class LoginComponent implements  OnInit{
       {
         if(resusuario.RolID == 1)
         {
-          this.router.navigate(['admin'], navigationExtras);
+          this.router.navigate(['principal/admin'], navigationExtras);
         }
         if(resusuario.RolID == 2)
         {
@@ -68,7 +68,7 @@ export class LoginComponent implements  OnInit{
         }
         if(resusuario.RolID == 3)
         {
-          this.router.navigate(['usuario'], navigationExtras);
+          this.router.navigate(['principal/usuario'], navigationExtras);
         }
       
       
@@ -85,23 +85,18 @@ export class LoginComponent implements  OnInit{
   }
   check(){
     console.log("usuario: ", this.usuario);
-    if(this.usuario.id=-1 || this.usuario.Nombre === "" || this.usuario.Apellido === "" || this.usuario.correo === "" || this.usuario.contrasena === "" || this.usuario.FechaNacimiento === null || this.usuario.Teléfono ===""){
+    if(this.usuario.id=-1 || this.usuario.Nombre === "" || this.usuario.Apellido === "" || this.usuario.correo === "" || this.usuario.Contrasena === "" || this.usuario.FechaNacimiento === null || this.usuario.Telefono ===""){
     console.log("Error, campos vacios");
     
     
   }else{
     console.log("usuario: ", this.usuario);
-    this.usuarioService.create(this.usuario.Nombre,this.usuario.Apellido,this.usuario.correo,this.usuario.contrasena,this.usuario.FechaNacimiento,this.usuario.Teléfono).subscribe((resUsuario: any) => {
+    this.usuarioService.create(this.usuario.Nombre,this.usuario.Apellido,this.usuario.correo,this.usuario.Contrasena,this.usuario.FechaNacimiento,this.usuario.Telefono).subscribe((resUsuario: any) => {
 
     },err => console.error(err)
     );
   }
 }
  
-  //g()
-  //{
-  //  console.log("Cerrando");
-  //  $("#modalModificarEmpresa").modal("close");
-  //  console.log(this.empresa)
-  //}
+ 
 }

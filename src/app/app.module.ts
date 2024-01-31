@@ -9,12 +9,24 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule,DatePipe } from '@angular/common';
 import { AdminComponent } from './components/admin/admin.component';
 import { UsuarioNComponent } from './components/usuario-n/usuario-n.component';
+import { PrincipalComponent } from './components/principal/principal.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { IngresosComponent } from './components/ingresos/ingresos.component';
+import { MembresiasComponent } from './components/membresias/membresias.component';
+import { DescuentosComponent } from './components/descuentos/descuentos.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     AdminComponent,
-    UsuarioNComponent
+    UsuarioNComponent,
+    PrincipalComponent,
+    NavigationComponent,
+    FooterComponent,
+    IngresosComponent,
+    MembresiasComponent,
+    DescuentosComponent
   ],
   imports: [
     BrowserModule,

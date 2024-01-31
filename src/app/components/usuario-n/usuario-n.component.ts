@@ -16,10 +16,13 @@ export class UsuarioNComponent {
     $('.carousel.carousel-slider').carousel({
       fullWidth: false
     });
+    let id = localStorage.getItem('id'); 
   }
-
+  
   constructor(private usuarioService : UsuarioService, private router: Router){
 
 
-}
+};
+
+
 }

@@ -69,6 +69,14 @@
                             <label class="validate" for="Telefono">Telefono</label>
                           </div>
                         </div>
+                        <div class="row col s12">
+                          <label>Rol</label>
+                          <select [(ngModel)]='usuario.id_Rol' class="browser-default">
+                          <option *ngFor="let rol of roles" [value]="rol.id_Rol">
+                          {{rol.nombre}}
+                          </option>
+                          </select>
+                          </div>
                         <div class="row">
                           <div class="input-field col s12">
                             <input  id="Fecha" type="Date"  [(ngModel)]="usuario.FechaNacimiento" #fechaD (change)="ActualizarFecha(fechaD.value)" class="datepicker">

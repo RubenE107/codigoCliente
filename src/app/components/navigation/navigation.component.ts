@@ -45,8 +45,8 @@ export class NavigationComponent implements OnInit{
   }else{
     console.log("usuario: ", this.usuario);
     this.usuarioService.create(this.usuario.Nombre,this.usuario.Apellido,this.usuario.correo,this.usuario.Contrasena,this.usuario.FechaNacimiento,this.usuario.Telefono).subscribe((resUsuario: any) => {
-      $("#Registrar").modal("close").then(() => {this.router.navigate(['principal/admin']);});
-      
+      $("#Registrar").modal("close");
+      this.router.navigate(['principal/admin']);
     },err => console.error(err)
     );
     

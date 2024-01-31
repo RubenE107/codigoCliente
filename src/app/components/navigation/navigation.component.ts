@@ -1,4 +1,8 @@
 import { Component,OnInit } from '@angular/core';
+import { Usuario } from '../../models/Usuario';
+import { UsuarioService } from '../../services/usuario.service';
+import { Router } from '@angular/router';
+import { DatePipe } from '@angular/common';
 declare var $: any; // Declaración de jQuery
 @Component({
   selector: 'app-navigation',
@@ -6,18 +10,39 @@ declare var $: any; // Declaración de jQuery
   styleUrl: './navigation.component.css'
 })
 export class NavigationComponent implements OnInit{
+  usuarios : Usuario [] = [];
+  usuario :Usuario= new Usuario();
+  constructor(private datePipe:DatePipe, private usuarioService : UsuarioService , private router: Router){
+   
+  }
+  
   ngOnInit(): void 
   {
     $('.dropdown-trigger').dropdown();
     $('.tooltipped').tooltip();
-  }
-  descuento(){
+    $(document).ready(function()
+    {
+      $('.modal').modal();
+
+    });
+
 
   }
-  membresia(){
-
-  }
-  ingresos(){
+  check(){
+    $('#Registrar').modal();
+    $("#Registrar").modal("open");
+    console.log("usuario: ", this.usuario);
+    if( this.usuario.Nombre === "" || this.usuario.Apellido === "" || this.usuario.correo === "" || this.usuario.Contrasena === "" || this.usuario.FechaNacimiento === null || this.usuario.Telefono ===""){
+    console.log("Error, campos vacios");
+    
+    
+  }else{
+    console.log("usuario: ", this.usuario);
+    this.usuarioService.create(this.usuario.Nombre,this.usuario.Apellido,this.usuario.correo,this.usuario.Contrasena,this.usuario.FechaNacimiento,this.usuario.Telefono).subscribe((resUsuario: any) => {
+      $("#Registrar").modal("close");
+    },err => console.error(err)
+    );
     
   }
+}
 }

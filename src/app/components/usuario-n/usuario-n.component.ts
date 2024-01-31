@@ -17,14 +17,15 @@ export class UsuarioNComponent {
       fullWidth: false
     });
     let id = localStorage.getItem('id'); 
+    this.usuarioService.existe(this.usuario.correo,this.usuario.Contrasena).subscribe((resusuario: any) =>
+    {
+      console.log("resusuario: ", resusuario);
+  });
   }
   
   constructor(private usuarioService : UsuarioService, private router: Router){
 
 
-    this.usuarioService.existe(this.usuario.correo,this.usuario.Contrasena).subscribe((resusuario: any) =>
-    {
-      console.log("resusuario: ", resusuario);
-  });
+    
   }
 }

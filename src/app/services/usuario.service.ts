@@ -14,7 +14,7 @@ constructor(private http:HttpClient) {}
       "correo":correo,
       "contrasena": contrasena,
       "FechaNacimiento": FechaNacimiento,
-      "Teléfono":Telefono
+      "Telefono":Telefono
   });
   }
       

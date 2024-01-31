@@ -22,7 +22,40 @@ export class UsuarioNComponent {
   constructor(private usuarioService : UsuarioService, private router: Router){
 
 
+    this.usuarioService.existe(this.usuario.correo,this.usuario.Contrasena).subscribe((resusuario: any) =>
+    {
+
+      console.log("resusuario: ", resusuario);
+      if(resusuario.RolID != -1)
+      
+      {
+        if(resusuario.RolID == 1)
+        {
+          this.router.navigate(['principal/admin']);
+        }
+        if(resusuario.RolID == (3 || 2))
+        {
+          localStorage.setItem('id', resusuario.UsuarioID);
+          
+          this.router.navigate(['principal/usuario']);
+        }
+      
+      
+        
+
+
+        
+      }else{
+        console.log("Error, usuario o contrasena no valida");
+      }
+    },
+    
+
+
 };
+
+
+
 
 
 }

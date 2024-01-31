@@ -47,12 +47,6 @@ export class LoginComponent implements  OnInit{
   {
     this.usuarioService.existe(this.usuario.correo,this.usuario.Contrasena).subscribe((resusuario: any) =>
     {
-      this.usuario=resusuario;
-      let navigationExtras: NavigationExtras = {
-        state: {
-            "usuario": this.usuario
-        }
-      };
 
       console.log("resusuario: ", resusuario);
       if(resusuario.RolID != -1)
@@ -60,13 +54,13 @@ export class LoginComponent implements  OnInit{
       {
         if(resusuario.RolID == 1)
         {
-          this.router.navigate(['principal/admin'], navigationExtras);
+          this.router.navigate(['principal/admin']);
         }
         if(resusuario.RolID == (3 || 2))
         {
           localStorage.setItem('id', resusuario.UsuarioID);
           
-          this.router.navigate(['principal/usuario'], navigationExtras);
+          this.router.navigate(['principal/usuario']);
         }
       
       

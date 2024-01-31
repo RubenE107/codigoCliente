@@ -20,6 +20,7 @@ export class UsuarioNComponent {
     this.usuarioService.existe(this.usuario.correo,this.usuario.Contrasena).subscribe((resusuario: any) =>
     {
       console.log("resusuario: ", resusuario);
+      this.usuario = resusuario;
   });
   }
   

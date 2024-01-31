@@ -48,8 +48,8 @@ export class UsuarioNComponent {
       }else{
         console.log("Error, usuario o contrasena no valida");
       }
-    },
-    
+    });
+
 
 
 };

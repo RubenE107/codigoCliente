@@ -17,7 +17,7 @@ export class UsuarioNComponent {
       fullWidth: false
     });
     let id = localStorage.getItem('id'); 
-    this.usuarioService.existe(this.usuario.correo,this.usuario.Contrasena).subscribe((resusuario: any) =>
+    this.usuarioService.listOne(id).subscribe((resusuario: any) =>
     {
       console.log("resusuario: ", resusuario);
       this.usuario = resusuario;

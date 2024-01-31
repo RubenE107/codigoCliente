@@ -107,15 +107,7 @@ export class AdminComponent implements OnInit{
     );
  
 }
-check(){
-  console.log("usuario: ", this.usuario);
-  if(this.usuario.id=-1 || this.usuario.Nombre === "" || this.usuario.Apellido === "" || this.usuario.correo === "" || this.usuario.Contrasena === "" || this.usuario.FechaNacimiento === null || this.usuario.Telefono ===""){
-  console.log("Error, campos vacios");
-  }else{console.log("Usuario creado correctamente");
-  $("#Editar").modal("close");
-location.reload();  
-}
-}
+
 initDatepicker(date?:any){
   if(date){
     $("#FechaNacimiento").datepicker({format: 'yyyy-mm-dd',default: date,});
@@ -150,17 +142,28 @@ EditA(usuario_id:any) {
   );
 
 }
-act(usuario_id:any){
+
+Reg(id:any) {
+   
+  console.log(this.usuario)
+  $('#Registrar').modal();
+  $("#Registrar").modal("open");
+
+
+}
+check(id:any){
   console.log("usuario: ", this.usuario);
-  if(this.usuario.id=-1 || this.usuario.Nombre === "" || this.usuario.Apellido === "" || this.usuario.correo === "" || this.usuario.Contrasena === "" || this.usuario.FechaNacimiento === null || this.usuario.Telefono ===""){
+  if( this.usuario.Nombre === "" || this.usuario.Apellido === "" || this.usuario.correo === "" || this.usuario.Contrasena === "" || this.usuario.FechaNacimiento === null || this.usuario.Telefono ===""){
   console.log("Error, campos vacios");
-  }else{
-    console.log("Usuario creado correctamente");
-  this.usuarioService.act(usuario_id,this.usuario.Nombre,this.usuario.Apellido,this.usuario.correo,this.usuario.Contrasena,this.usuario.FechaNacimiento,this.usuario.Telefono).subscribe((resUsuario: any) => {
-  $("#Editar1").modal("close");
-
-});
-
+  
+  
+}else{
+  console.log("usuario: ", this.usuario);
+  this.usuarioService.act(id,this.usuario.Nombre,this.usuario.Apellido,this.usuario.correo,this.usuario.Contrasena,this.usuario.FechaNacimiento,this.usuario.Telefono).subscribe((resUsuario: any) => {
+    $("#Registrar").modal("close");
+  },err => console.error(err)
+  );
+  
 }
 }
 }

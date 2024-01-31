@@ -124,19 +124,9 @@ EditA(usuario_id:any) {
    
     
   console.log(usuario_id);
-  this.usuarioService.existe(this.usuario.correo,this.usuario.Contrasena).subscribe((resusuario: any) =>
+  this.usuarioService.act(this.usuario.UsuarioID,this.usuario.Nombre,this.usuario.Apellido,this.usuario.correo,this.usuario.Contrasena,this.usuario.FechaNacimiento,this.usuario.Telefono).subscribe((resusuario: any) =>
   {
-    this.usuario.id = resusuario.RolID;
-    this.usuario.UsuarioID = resusuario.UsuarioID;
-  });
-
-  this.usuarioService.listOne(usuario_id).subscribe((resUsuario: any) =>
-  {
-    console.log("resusuario: ", resUsuario);
-    this.usuario = resUsuario;  
-    console.log(this.usuario)
-    $('#Editar1').modal();
-    $("#Editar1").modal("open");
+    $("#Editar1").modal("close");
   },
   err => console.error(err)
   );
@@ -159,6 +149,7 @@ check(id:any){
   
 }else{
   console.log("usuario: ", this.usuario);
+  console.log("Actualizando");
   this.usuarioService.act(id,this.usuario.Nombre,this.usuario.Apellido,this.usuario.correo,this.usuario.Contrasena,this.usuario.FechaNacimiento,this.usuario.Telefono).subscribe((resUsuario: any) => {
     $("#Registrar").modal("close");
   },err => console.error(err)

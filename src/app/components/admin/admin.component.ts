@@ -112,7 +112,9 @@ check(){
   console.log("usuario: ", this.usuario);
   if(this.usuario.id=-1 || this.usuario.Nombre === "" || this.usuario.Apellido === "" || this.usuario.correo === "" || this.usuario.Contrasena === "" || this.usuario.FechaNacimiento === null || this.usuario.Telefono ===""){
   console.log("Error, campos vacios");
-  }else{console.log("Usuario creado correctamente");}
+  }else{console.log("Usuario creado correctamente");
+  $("#Editar").modal("close");
+}
 }
 initDatepicker(date?:any){
   if(date){

@@ -92,6 +92,7 @@ export class LoginComponent implements  OnInit{
     },err => console.error(err)
     );
   }
+  this.router.navigateByUrl("/principal/login");
 }
  
  

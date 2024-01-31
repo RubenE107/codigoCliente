@@ -89,7 +89,7 @@ export class AdminComponent implements OnInit{
    
     
     console.log(usuario_id);
-    this.usuarioService.existe(this.usuario.correo,this.usuario.Contrasena).subscribe((resusuario: any) =>
+    this.usuarioService.listOne(usuario_id).subscribe((resusuario: any) =>
     {
       this.usuario.id = resusuario.RolID;
       this.usuario.UsuarioID = resusuario.UsuarioID;

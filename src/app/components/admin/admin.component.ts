@@ -151,7 +151,7 @@ check(id:any){
   console.log("usuario: ", this.usuario);
   console.log("Actualizando");
   this.usuarioService.act(id,this.usuario.Nombre,this.usuario.Apellido,this.usuario.correo,this.usuario.Contrasena,this.usuario.FechaNacimiento,this.usuario.Telefono).subscribe((resUsuario: any) => {
-    $("#Registrar").modal("close");
+    $("#Editar").modal("close");
   },err => console.error(err)
   );
   

@@ -28,9 +28,15 @@ export class NavigationComponent implements OnInit{
 
 
   }
-  check(){
+  Reg() {
+   
+    console.log(this.usuario)
     $('#Registrar').modal();
     $("#Registrar").modal("open");
+  
+ 
+}
+  check(){
     console.log("usuario: ", this.usuario);
     if( this.usuario.Nombre === "" || this.usuario.Apellido === "" || this.usuario.correo === "" || this.usuario.Contrasena === "" || this.usuario.FechaNacimiento === null || this.usuario.Telefono ===""){
     console.log("Error, campos vacios");

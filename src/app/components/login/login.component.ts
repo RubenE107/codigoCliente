@@ -64,6 +64,8 @@ export class LoginComponent implements  OnInit{
         }
         if(resusuario.RolID == (3 || 2))
         {
+          localStorage.setItem('correo', resusuario);
+          
           this.router.navigate(['principal/usuario'], navigationExtras);
         }
       

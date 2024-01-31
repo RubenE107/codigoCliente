@@ -3,6 +3,8 @@ import { UsuarioService} from './../../services/usuario.service';
 import { Usuario } from '../../models/Usuario';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
+import { rol } from '../../models/rol';
+import { RolesService } from '../../services/roles.service';
 declare var $: any; // Declaración de jQuery
 @Component({
   selector: 'app-usuario',
@@ -12,13 +14,22 @@ declare var $: any; // Declaración de jQuery
 export class AdminComponent implements OnInit{
   usuarios : Usuario [] = [];
   usuario :Usuario= new Usuario();
-  constructor(private usuarioService : UsuarioService, private router: Router){
+  rol: rol = new rol();
+  constructor(private rolesService:RolesService,private usuarioService : UsuarioService, private router: Router){
     
     this.usuarioService.list().subscribe((resusuario: any) =>
     {
       this.usuarios = resusuario;  
       //console.log(resusuario);
       console.log(this.usuarios)
+    },
+    err => console.error(err)
+    );
+    this.rolesService.list().subscribe((resroles: any) =>
+    {
+      this.rol = resroles;  
+      //console.log(resusuario);
+      console.log(this.rol)
     },
     err => console.error(err)
     );
@@ -39,6 +50,7 @@ export class AdminComponent implements OnInit{
     },
     err => console.error(err)
     );
+    
   }
 
   eliminarUsuario(UsuarioID : any){
@@ -77,6 +89,12 @@ export class AdminComponent implements OnInit{
    
     
     console.log(usuario_id);
+    this.usuarioService.existe(this.usuario.correo,this.usuario.Contrasena).subscribe((resusuario: any) =>
+    {
+      this.usuario.id = resusuario.RolID;
+      this.usuario.UsuarioID = resusuario.UsuarioID;
+    });
+
     this.usuarioService.listOne(usuario_id).subscribe((resUsuario: any) =>
     {
       console.log("resusuario: ", resUsuario);

@@ -9,6 +9,7 @@ export class RolesService {
 
 constructor(private http:HttpClient) {}
   list() {
-    return this.http.get(`${environment.API_URL}usuarios/mostrarTodosUsuarios`);
+    return this.http.get(`${environment.API_URL}Roles/mostrarRoles/`);
   }
+  
 }

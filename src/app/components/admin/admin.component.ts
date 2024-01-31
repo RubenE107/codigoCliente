@@ -14,7 +14,7 @@ declare var $: any; // Declaración de jQuery
 export class AdminComponent implements OnInit{
   usuarios : Usuario [] = [];
   usuario :Usuario= new Usuario();
-  rol: rol = new rol();
+  rol: rol []=  [];
   constructor(private rolesService:RolesService,private usuarioService : UsuarioService, private router: Router){
     
     this.usuarioService.list().subscribe((resusuario: any) =>

@@ -158,7 +158,7 @@ act(usuario_id:any){
     console.log("Usuario creado correctamente");
   this.usuarioService.act(usuario_id,this.usuario.Nombre,this.usuario.Apellido,this.usuario.correo,this.usuario.Contrasena,this.usuario.FechaNacimiento,this.usuario.Telefono).subscribe((resUsuario: any) => {
   $("#Editar1").modal("close");
-location.reload();
+
 });
 
 }

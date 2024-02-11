@@ -25,6 +25,9 @@ export class NavigationComponent implements OnInit{
       $('.modal').modal();
 
     });
+    @HostListener('document:click', ['$event'])
+  
+    
 
 
   }
@@ -34,7 +37,6 @@ export class NavigationComponent implements OnInit{
     console.log(this.usuario)
     $('#Registrar').modal();
     $("#Registrar").modal("open");
-    $('Registrar').modal('close');
     
   
  

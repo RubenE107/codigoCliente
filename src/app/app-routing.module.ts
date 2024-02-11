@@ -15,8 +15,6 @@ const routes: Routes = [
   {path: 'principal', component: PrincipalComponent,
   children:[{ path: 'admin', component: AdminComponent},
   { path: 'usuario', component: UsuarioNComponent  },
-  { path:'descuento', component: DescuentosComponent},
-  { path:'membresias', component: MembresiasComponent},
   { path:'ingresos', component: IngresosComponent},
   { path: 'shopping', component: ShoppComponent},
 

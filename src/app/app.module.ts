@@ -15,6 +15,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { IngresosComponent } from './components/ingresos/ingresos.component';
 import { MembresiasComponent } from './components/membresias/membresias.component';
 import { DescuentosComponent } from './components/descuentos/descuentos.component';
+import { ShoppComponent } from './components/shopp/shopp.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,8 @@ import { DescuentosComponent } from './components/descuentos/descuentos.componen
     FooterComponent,
     IngresosComponent,
     MembresiasComponent,
-    DescuentosComponent
+    DescuentosComponent,
+    ShoppComponent
   ],
   imports: [
     BrowserModule,

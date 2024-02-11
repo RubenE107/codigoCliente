@@ -56,4 +56,7 @@ export class NavigationComponent implements OnInit{
     
   }
 }
+chospping(){
+  this.router.navigate(['principal/shopping']);
+}
 }

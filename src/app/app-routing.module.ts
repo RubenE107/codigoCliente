@@ -7,6 +7,7 @@ import { PrincipalComponent } from './components/principal/principal.component';
 import { DescuentosComponent } from './components/descuentos/descuentos.component';
 import { MembresiasComponent } from './components/membresias/membresias.component';
 import { IngresosComponent } from './components/ingresos/ingresos.component';
+import { ShoppComponent } from './components/shopp/shopp.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' }, // Si la ruta es '', redirige a '/login'. 'pathMatch: 'full'' asegura que toda la URL debe estar vacía para que se haga la redirección.
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path:'descuento', component: DescuentosComponent},
   { path:'membresias', component: MembresiasComponent},
   { path:'ingresos', component: IngresosComponent},
+  { path: 'shopping', component: ShoppComponent},
 
 
 

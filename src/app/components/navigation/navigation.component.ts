@@ -30,7 +30,7 @@ export class NavigationComponent implements OnInit{
   }
   Reg() {
 
-    this.usuario = new Usuario;
+    var usuario = new Usuario();
     console.log(this.usuario)
     $('#Registrar').modal();
     $("#Registrar").modal("open");

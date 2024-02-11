@@ -69,7 +69,7 @@ export class LoginComponent implements  OnInit{
         }  
       }else{
         console.log("Error, usuario o contrasena no valida");
-        
+        $("#carga").modal("close");
       }
     },
     err => console.error(err)

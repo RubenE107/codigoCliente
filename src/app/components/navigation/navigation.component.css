@@ -43,31 +43,15 @@ img{
     font-size: small;
     font-family: 'Times New Roman', Times, serif;
     text-size-adjust: auto;
-}
-/* Estilo para el botón */
-.btn {
-    background-color: #007bff; /* Color de fondo */
-    color: white; /* Color del texto */
-    padding: 10px 20px; /* Espaciado interno */
-    border: none; /* Sin borde */
-    border-radius: 5px; /* Bordes redondeados */
-    cursor: pointer; /* Cursor de puntero */
-  }
-  
-  /* Estilo para el ícono dentro del botón */
-  .material-icons {
-    vertical-align: middle; /* Alineación vertical */
-  }
-  
-  /* Estilo para el menú desplegable */
-  .dropdown-content {
     display: none; /* Por defecto oculto */
     position: absolute; /* Posicionamiento absoluto */
     background-color: #fff; /* Color de fondo */
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Sombra */
     z-index: 1; /* Z-index para estar por encima de otros elementos */
     min-width: 160px; /* Ancho mínimo */
-  }
+}
+
+  
   
   /* Estilo para los elementos del menú desplegable */
   .dropdown-content a {

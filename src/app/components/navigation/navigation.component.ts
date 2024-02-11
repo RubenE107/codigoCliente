@@ -15,7 +15,7 @@ export class NavigationComponent implements OnInit{
   constructor(private datePipe:DatePipe, private usuarioService : UsuarioService , private router: Router){
    
   }
-  
+
   ngOnInit(): void 
   {
     $('.dropdown-trigger').dropdown();
@@ -58,5 +58,15 @@ export class NavigationComponent implements OnInit{
 }
 chospping(){
   this.router.navigate(['principal/shopping']);
+}
+inicio(){
+  let rol=localStorage.getItem('Rolid');
+  if (rol == "1"){
+    this.router.navigate(['principal/admin']);
+  }
+  if (rol == "2" || rol == "3"){
+    this.router.navigate(['principal/usuario']);
+  }
+  //this.router.navigate(['principal/admin']);
 }
 }

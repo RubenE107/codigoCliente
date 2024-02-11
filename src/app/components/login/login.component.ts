@@ -47,7 +47,7 @@ export class LoginComponent implements  OnInit{
   {
     this.usuarioService.existe(this.usuario.correo,this.usuario.Contrasena).subscribe((resusuario: any) =>
     {
-
+      localStorage.setItem('Rolid',resusuario.RolID); 
       console.log("resusuario: ", resusuario);
       if(resusuario.RolID != -1)
       
@@ -59,6 +59,7 @@ export class LoginComponent implements  OnInit{
         if(resusuario.RolID == (3 || 2))
         {
           localStorage.setItem('id', resusuario.UsuarioID);
+          
           
           this.router.navigate(['principal/usuario']);
         }

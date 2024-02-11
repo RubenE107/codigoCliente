@@ -25,8 +25,7 @@ export class NavigationComponent implements OnInit{
       $('.modal').modal();
 
     });
-    @HostListener('document:click', ['$event'])
-  
+
     
 
 

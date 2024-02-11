@@ -45,6 +45,7 @@ export class LoginComponent implements  OnInit{
 
   entrar()
   {
+    $("#cargar").modal("open");
     this.usuarioService.existe(this.usuario.correo,this.usuario.Contrasena).subscribe((resusuario: any) =>
     {
       localStorage.setItem('Rolid',resusuario.RolID); 
@@ -53,7 +54,7 @@ export class LoginComponent implements  OnInit{
       if(resusuario.RolID != -1)
       
       {
-        $("#cargar").modal("open");
+        
         if(resusuario.RolID == 1)
         {
           this.router.navigate(['principal/admin']);
@@ -67,6 +68,7 @@ export class LoginComponent implements  OnInit{
         }  
       }else{
         console.log("Error, usuario o contrasena no valida");
+        $("#cargar").modal("close");
       }
     },
     err => console.error(err)

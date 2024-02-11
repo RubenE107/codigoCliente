@@ -49,9 +49,11 @@ export class LoginComponent implements  OnInit{
     {
       localStorage.setItem('Rolid',resusuario.RolID); 
       console.log("resusuario: ", resusuario);
+      
       if(resusuario.RolID != -1)
       
       {
+        $("#cargar").modal("open");
         if(resusuario.RolID == 1)
         {
           this.router.navigate(['principal/admin']);
@@ -62,13 +64,7 @@ export class LoginComponent implements  OnInit{
           
           
           this.router.navigate(['principal/usuario']);
-        }
-      
-      
-        
-
-
-        
+        }  
       }else{
         console.log("Error, usuario o contrasena no valida");
       }

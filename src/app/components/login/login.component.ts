@@ -45,7 +45,7 @@ export class LoginComponent implements  OnInit{
 
   entrar()
   {
-    $("#cargar").modal("open");
+    $("#carga").modal("open");
     console.log("cargando")
     this.usuarioService.existe(this.usuario.correo,this.usuario.Contrasena).subscribe((resusuario: any) =>
     {

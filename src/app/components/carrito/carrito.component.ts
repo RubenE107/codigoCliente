@@ -60,8 +60,8 @@ export class CarritoComponent implements OnInit{
       console.log(this.carrito);
     });
     console.log("editar id: ", id);
-    $('#agregar-producto').modal();
-    $("#agregar-producto").modal("open");
+    $('#agregar').modal();
+    $("#agregar").modal("open");
   }
   eliminarCarrito(id: number){
     console.log("Click en eliminar Carrito");

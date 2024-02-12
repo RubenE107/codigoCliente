@@ -70,26 +70,35 @@
                 <form id="form-agregar-producto">
                     <div id="productos">
                         <div class="producto">
+                            <div class="row col s12">
+                                <label>membresia</label>
+                                <select [(ngModel)]='membresia.MembresiaID' class="browser-default">
+                                <option *ngFor="let membresia of membresias" [value]="membresia.MembresiaID">
+                                {{membresia.TipoMembresia}}
+                                </option>
+                                </select>
+                                </div>
                             <div class="input-field">
-                                <input type="text" class="producto-id" name="producto-id[]" placeholder="ID del Producto">
-                                <label>ID del Producto</label>
+                                <input type="text" class="MembreisaID" [(ngModel)]="carrito.MembresiaID">
+                                <label>MembreisaID</label>
                             </div>
+                            
                             <div class="input-field">
-                                <input type="number" class="cantidad" name="cantidad[]" placeholder="Cantidad">
+                                <input type="number" class="cantidad" [(ngModel)]="carrito.Cantidad" placeholder="Cantidad">
                                 <label>Cantidad</label>
                             </div>
                             <div class="input-field">
-                                <input type="number" class="precio-unitario" name="precio-unitario[]" placeholder="Precio Unitario">
+                                <input type="number" class="precio-unitario" [(ngModel)]="carrito.PrecioUnitario" placeholder="Precio Unitario">
                                 <label>Precio Unitario</label>
                             </div>
                             <div class="input-field">
-                                <input type="number" class="total" name="total[]" placeholder="Total">
+                                <input type="number" class="total" [(ngModel)]="carrito.Total" placeholder="Total">
                                 <label>Total</label>
                             </div>
                         </div>
                     </div>
-                    <button type="button" id="btn-agregar-producto" class="btn waves-effect waves-light">Agregar Producto</button>
-                    <button type="submit" class="btn waves-effect waves-light">Agregar al Carrito</button>
+                    
+                    <button (click)="agr()" type="submit" class="btn waves-effect waves-light">Agregar al Carrito</button>
                 </form>
 
               </div>

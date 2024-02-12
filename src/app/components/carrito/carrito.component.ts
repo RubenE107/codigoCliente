@@ -2,6 +2,9 @@ import { Component, OnInit} from '@angular/core';
 import { DatePipe } from '@angular/common';
 import { CarritoService } from '../../services/carrito.service';
 import { Carrito } from '../../models/Carrito';
+import { Membresia } from '../../models/Membresia';
+import { MembresiaService } from '../../services/membresias.service';
+
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 declare var $: any;
@@ -13,7 +16,9 @@ declare var $: any;
 export class CarritoComponent implements OnInit{
   carritos : Carrito [] = [];
   carrito :Carrito= new Carrito();
-    constructor(private datePipe:DatePipe  , private carritoService: CarritoService, private router: Router){
+  membresias: Membresia []=  [];
+  membresia:Membresia= new Membresia();
+    constructor(private datePipe:DatePipe  , private carritoService: CarritoService, private router: Router,private membresiaService: MembresiaService){
       
       let id = localStorage.getItem('id');
       this.carritoService.list(id).subscribe((resusuario: any) =>
@@ -21,9 +26,16 @@ export class CarritoComponent implements OnInit{
         this.carritos = resusuario;  
         //console.log(resusuario);
         console.log(this.carritos)
-      },
-      err => console.error(err)
+      },err => console.error(err)
       );
+      this.membresiaService.list().subscribe((resmembresia: any) =>
+      {
+        this.membresias = resmembresia;  
+        //console.log(resusuario);
+        console.log(this.membresias)
+      },err => console.error(err)
+      );
+      
       
       
       
@@ -50,6 +62,7 @@ export class CarritoComponent implements OnInit{
   }
   EditF(id: number){
     $('#agregar').modal("open");
+    localStorage.setItem('CarritoID', id.toString());
   }
   Edit(id: number){
     this.carrito= new Carrito();
@@ -109,6 +122,14 @@ export class CarritoComponent implements OnInit{
     });
     
   }
+  agr(){
+    let carrID=localStorage.getItem('CarritoID');
+    console.log(this.carrito);
+    this.carritoService.agregarProducto(this.carrito.CarritoID, this.carrito.Cantidad, this.carrito.MembresiaID, this.carrito.PrecioUnitario, this.carrito.Total).subscribe((resusuario: any) =>
+    {
+      console.log(resusuario);
+      this.router.navigate(['/principal/shopping']);
+    });
 
-
+  }
 }

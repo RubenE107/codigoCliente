@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../environments/environment';
+import { Membresia } from '../models/Membresia';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +23,9 @@ export class CarritoService {
   }
   listOne(id: any) {
     return this.http.get(`${environment.API_URL}car/obt/${id}`);
+  }
+  agregarProducto(id: any, cantidad: any, MembresiaID: any, precioUnitario: any, Total: any) {
+    return this.http.post(`${environment.API_URL}car/agregarProducto/`, {"CarritoID":id,"Cantidad":cantidad,"MembresiaID":MembresiaID,"PrecioUnitario":precioUnitario,"Total":Total});
   }
 
 }

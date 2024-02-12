@@ -1,27 +1,18 @@
 
-  
-  <table class="default" *ngIf="membresias != undefined">
-  
-    <tr *ngFor="let membresia of membresias">
-      <td>{{membresia.TipoMembresia}}</td>
-      <td>{{membresia.DuracionSemana}}</td>
-  
-      <td>{{membresia.Precio}}</td>
-    
-      <td><a >
-        <button class="btn-delete" type="submit" name="action">
-          <i class="material-icons">delete</i>
-        </button>
-              </a></td>
-<!-- (click)="eliminarUsuario(usuario.UsuarioID)"-->
-      <td><a >
-        <!--(click)="Edit(usuario.UsuarioID)"-->
-        <button class="btn-delete" type="submit" name="action">
-          <i class="material-icons">create</i>
-        </button>
-
-      </a></td>
-    </tr>
-  
+<table class="minimalist" *ngIf="membresias != undefined">
+    <thead>
+      <tr>
+        <th>Tipo de Membresía</th>
+        <th>Duración (semanas)</th>
+        <th>Precio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let membresia of membresias">
+        <td>{{ membresia.TipoMembresia }}</td>
+        <td>{{ membresia.DuracionSemana }}</td>
+        <td>{{ membresia.Precio }}</td>
+      </tr>
+    </tbody>
   </table>
-
+  

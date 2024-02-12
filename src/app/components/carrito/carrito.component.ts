@@ -40,5 +40,9 @@ export class CarritoComponent {
     console.log("eliminar id: ", id);
     
   }
+  crear(){
+    let id = localStorage.getItem('id');
+    console.log("crear id: ", id);
+  }
 
 }

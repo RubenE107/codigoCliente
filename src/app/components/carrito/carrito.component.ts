@@ -140,6 +140,7 @@ export class CarritoComponent implements OnInit{
     {
       this.carritos = resusuario;
   });
+  console.log(this.carritos);
 
 }
 }

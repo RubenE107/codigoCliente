@@ -1,1 +1,16 @@
-<p>carrito works!</p>
+<table class="est" *ngIf="carritos != undefined">
+    <thead>
+      <tr>
+        <th>Nombre del Carrito</th>
+        <th>Fecha de Creación</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let carrito of carritos">
+        <td>{{ carrito.Nombre }}</td>
+        <td>{{ FormatDate(carrito.FechaCreacion) }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  

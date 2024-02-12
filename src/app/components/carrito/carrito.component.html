@@ -71,8 +71,8 @@
                     <div id="productos">
                         <div class="producto">
                             <div class="row col s12">
-                                <label for="select-membresia">Membresia</label>
-                                <select id="select-membresia" [(ngModel)]="membresia.MembresiaID" class="browser-default">
+                                <label >Membresia</label>
+                                <select [(ngModel)]="membresia.MembresiaID" class="browser-default">
                                     <option *ngFor="let membrecia of membresias" [value]="membrecia.MembresiaID">
                                         {{ membrecia.TipoMembresia }}
                                     </option>

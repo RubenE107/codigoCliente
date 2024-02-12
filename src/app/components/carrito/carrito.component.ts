@@ -48,8 +48,20 @@ export class CarritoComponent implements OnInit{
       }
       return '';
   }
+  EditF(){
+  
+  }
   Edit(id: number){
     console.log("editar id: ", id);
+    this.carritoService.listOne(id).subscribe((resusuario: any) =>
+    {
+      this.carrito = resusuario;  
+      console.log(resusuario);
+      console.log(this.carrito);
+    });
+      
+    $('#agregar-producto').modal();
+    $("#agregar-producto").modal("open");
   }
   eliminarCarrito(id: number){
     console.log("Click en eliminar Carrito");

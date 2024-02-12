@@ -20,5 +20,8 @@ export class CarritoService {
     return this.http.delete(`${environment.API_URL}car/eliminarCarrito/${id}`);
     
   }
+  listOne(id: any) {
+    return this.http.get(`${environment.API_URL}car/obt/${id}`);
+  }
 
 }

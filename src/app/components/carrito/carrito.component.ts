@@ -14,7 +14,7 @@ export class CarritoComponent {
   carrito :Carrito= new Carrito();
     constructor(private datePipe:DatePipe  , private carritoService: CarritoService, private router: Router){
       
-      let id = localStorage.getItem('ID');
+      let id = localStorage.getItem('id');
       this.carritoService.list(id).subscribe((resusuario: any) =>
       {
         this.carritos = resusuario;  

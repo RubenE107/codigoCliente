@@ -10,7 +10,7 @@ export class MembresiaService {
 
 constructor(private http:HttpClient) {}  
   list() {
-    return this.http.get(`${environment.API_URL}usuarios/menbresia/MostrarMenbresias/`);
+    return this.http.get(`${environment.API_URL}menbresia/MostrarMenbresias/`);
   }
 
 

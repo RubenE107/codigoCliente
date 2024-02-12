@@ -52,12 +52,13 @@ export class CarritoComponent implements OnInit{
   
   }
   Edit(id: number){
+    this.carrito= new Carrito();
     console.log("editar id: ", id);
    
     console.log("editar id: ", id);
-    if(this.carrito==null){console.log("No hay datos");}
-    //$('#agregar').modal();
-    //$("#agregar").modal("open");
+    
+    $('#agregar').modal();
+    $("#agregar").modal("open");
   }
   eliminarCarrito(id: number){
     console.log("Click en eliminar Carrito");

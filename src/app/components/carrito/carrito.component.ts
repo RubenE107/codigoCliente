@@ -53,12 +53,7 @@ export class CarritoComponent implements OnInit{
   }
   Edit(id: number){
     console.log("editar id: ", id);
-    this.carritoService.listOne(id).subscribe((resusuario: any) =>
-    {
-      this.carrito = resusuario;  
-      console.log(resusuario);
-      console.log(this.carrito);
-    });
+   
     console.log("editar id: ", id);
     if(this.carrito==null){console.log("No hay datos");}
     //$('#agregar').modal();

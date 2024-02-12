@@ -9,6 +9,19 @@
       <tr *ngFor="let carrito of carritos">
         <td>{{ carrito.Nombre }}</td>
         <td>{{ FormatDate(carrito.FechaCreacion) }}</td>
+        <td><a  (click)="eliminarCarrito(carrito.CarritoID)">
+            <button class="btn-delete" type="submit" name="action">
+              <i class="material-icons">delete</i>
+            </button>
+                  </a></td>
+    
+          <td><a (click)="Edit(carrito.CarritoID)">
+  
+            <button class="btn-delete" type="submit" name="action">
+              <i class="material-icons">create</i>
+            </button>
+  
+          </a></td>
       </tr>
     </tbody>
   </table>

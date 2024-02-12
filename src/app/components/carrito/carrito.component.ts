@@ -33,5 +33,12 @@ export class CarritoComponent {
       }
       return '';
   }
+  Edit(id: number){
+    console.log("editar id: ", id);
+  }
+  eliminarCarrito(id: number){
+    console.log("eliminar id: ", id);
+    
+  }
 
 }

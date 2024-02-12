@@ -72,7 +72,7 @@
                         <div class="producto">
                             <div class="row col s12">
                                 <label >Membresia</label>
-                                <select [(ngModel)]="membresia.MembresiaID" class="browser-default">
+                                <select [(ngModel)]="carrito.MembresiaID" class="browser-default">
                                     <option *ngFor="let membresia of membresias" [value]="membresia.MembresiaID">
                                         {{ membresia.TipoMembresia }}
                                     </option>

@@ -48,8 +48,8 @@ export class CarritoComponent implements OnInit{
       }
       return '';
   }
-  EditF(){
-  
+  EditF(id: number){
+    $('#agregar').modal("open");
   }
   Edit(id: number){
     this.carrito= new Carrito();

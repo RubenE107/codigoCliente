@@ -111,6 +111,7 @@ export class CarritoComponent implements OnInit{
       
       this.router.navigate(['/principal/shopping']);
     });
+    $('#agregar').modal("open");
   }
 
 

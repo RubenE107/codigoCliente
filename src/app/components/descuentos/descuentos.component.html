@@ -11,10 +11,10 @@
       <tr *ngFor="let descuento of descuentos">
         <td>{{ descuento.TipoDescuento }}</td>
         <td>{{ descuento.PorcentajeDescuento }}</td>
-        <td>{{ descuento.FechaInicio }}</td>
-        <td>{{ descuento.FechaFin }}</td>
+        <td>{{ FormatDate(descuento.FechaInicio) }}</td>
+        <td>{{ FormatDate(descuento.FechaFin) }}</td>
       </tr>
     </tbody>
   </table>
-  <div class="anuncio">Los descuentos se aplican automaticamnete depemdiendo de la fecha de inicio y su final</div>
+  <div class="anuncio">*Los descuentos se aplican automaticamnete depemdiendo de la fecha de inicio y su final</div>
   

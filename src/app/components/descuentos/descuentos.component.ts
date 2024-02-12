@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {DescuentosService} from './../../services/descuentos.service';
 import { Descuentos } from '../../models/Descuento';
 import { Router } from '@angular/router';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-descuentos',
@@ -11,7 +12,8 @@ import { Router } from '@angular/router';
 export class DescuentosComponent {
   descuentos : Descuentos [] = [];
   descuento :Descuentos= new Descuentos();
-    constructor(private descuentosService: DescuentosService, private router: Router){
+    constructor(private datePipe:DatePipe  , private descuentosService: DescuentosService, private router: Router){
+      
       
       this.descuentosService.list().subscribe((resusuario: any) =>
       {
@@ -25,5 +27,11 @@ export class DescuentosComponent {
     
       
     }
+    FormatDate(date: Date | null): string {
+      if (date) {
+          return this.datePipe.transform(date, 'yyyy-MM-dd') || '';
+      }
+      return '';
   }
+}
 

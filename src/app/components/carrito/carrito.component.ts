@@ -126,7 +126,6 @@ export class CarritoComponent implements OnInit{
   agr(){
     let carrID=localStorage.getItem('CarritoID');
     
-    formatDate(this.carrito.FechaCreacion, 'yyyy/MM/dd', 'en');
     console.log(this.carrito);
     this.carritoService.agregarProducto(this.carrito.CarritoID, this.carrito.Cantidad, this.carrito.MembresiaID, this.carrito.PrecioUnitario, this.carrito.Total).subscribe((resusuario: any) =>
     {

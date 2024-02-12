@@ -24,8 +24,8 @@ export class CarritoService {
   listOne(id: any) {
     return this.http.get(`${environment.API_URL}car/obt/${id}`);
   }
-  agregarProducto(id: any, cantidad: any, MembresiaID: any, precioUnitario: any, Total: any) {
-    return this.http.post(`${environment.API_URL}car/agregarProducto/`, {"CarritoID":id,"Cantidad":cantidad,"MembresiaID":MembresiaID,"PrecioUnitario":precioUnitario,"Total":Total});
+  agregarProducto(id: any, cantidad: any, MembresiaID: any, precioUnitario: any, PrecioTotal: any) {
+    return this.http.post(`${environment.API_URL}car/agregarProducto/`, {"CarritoID":id,"Cantidad":cantidad,"MembresiaID":MembresiaID,"PrecioUnitario":precioUnitario,"Total":PrecioTotal});
   }
 
 }

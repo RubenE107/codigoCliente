@@ -136,10 +136,10 @@ export class CarritoComponent implements OnInit{
 
   }
   mostrar(id: any) {
-    this.carritoService.list(id).subscribe((resusuario: any) =>
+    this.carritoService.listOne(id).subscribe((resusuario: any) =>
     {
       this.carritos = resusuario;
   });
-  
+
 }
 }

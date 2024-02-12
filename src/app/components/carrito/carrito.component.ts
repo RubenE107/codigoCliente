@@ -67,8 +67,8 @@ export class CarritoComponent implements OnInit{
     this.carritoService.create(nombre).subscribe((resusuario: any) =>
     {
       console.log(resusuario);
-      this.router.navigateByUrl('/pricipal').then(()=>
-      this.router.navigate(['/principal/shopping']));
+      
+      this.router.navigate(['/principal/shopping']);
     });
   }
 

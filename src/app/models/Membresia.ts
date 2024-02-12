@@ -1,12 +1,12 @@
 export class Membresia{
     "MembresiaID": number;
-    "tipoMembresia": string;
-    "precio": number;
+    "TipoMembresia": string;
+    "Precio": number;
     "DuracionSemana": number;
     constructor() {
         this.MembresiaID = -1;
-        this.tipoMembresia = "";
-        this.precio = 0;
+        this.TipoMembresia = "";
+        this.Precio = 0;
         this.DuracionSemana = 0;
     }
 }

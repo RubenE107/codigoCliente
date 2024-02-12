@@ -6,6 +6,7 @@ import { Membresia } from '../../models/Membresia';
 import { MembresiaService } from '../../services/membresias.service';
 
 import { Router } from '@angular/router';
+import{FormsModule} from '@angular/forms';
 import Swal from 'sweetalert2';
 declare var $: any;
 @Component({

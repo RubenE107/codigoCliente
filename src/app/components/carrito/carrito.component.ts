@@ -125,9 +125,9 @@ export class CarritoComponent implements OnInit{
   }
   agr(){
     let carrID=localStorage.getItem('CarritoID');
-    
+    console.log("editar id: ", carrID);
     console.log(this.carrito);
-    this.carritoService.agregarProducto(carrID,this.carrito.Cantidad,this.carrito.MembresiaID,this.carrito.PrecioUnitario,this.carrito.Total).subscribe((resusuario: any) =>
+    this.carritoService.agregarProducto(carrID,this.carrito.Cantidad,this.carrito.MembresiaID,this.carrito.PrecioUnitario,this.carrito.).subscribe((resusuario: any) =>
     {
       console.log(resusuario);
       this.router.navigate(['/principal/shopping']);

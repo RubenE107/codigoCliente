@@ -1,5 +1,5 @@
 import { Component, OnInit} from '@angular/core';
-import { DatePipe } from '@angular/common';
+import { DatePipe, formatDate } from '@angular/common';
 import { CarritoService } from '../../services/carrito.service';
 import { Carrito } from '../../models/Carrito';
 import { Membresia } from '../../models/Membresia';
@@ -126,6 +126,7 @@ export class CarritoComponent implements OnInit{
   agr(){
     let carrID=localStorage.getItem('CarritoID');
     console.log(this.carrito);
+    formatDate(this.carrito.FechaCreacion, 'yyyy/MM/dd', 'en');
     this.carritoService.agregarProducto(this.carrito.CarritoID, this.carrito.Cantidad, this.carrito.MembresiaID, this.carrito.PrecioUnitario, this.carrito.Total).subscribe((resusuario: any) =>
     {
       console.log(resusuario);

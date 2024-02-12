@@ -54,9 +54,22 @@ export class CarritoComponent implements OnInit{
     console.log("eliminar id: ", id);
     
   }
-  crear(){
+  FCrear(){
+    this.carrito = new Carrito();
+    $('#Nuevo').modal();
+    $("#Nuevo").modal("open");
+    
+  }
+  crear(nombre:string){
+    $('#Nuevo').modal("close");
     let id = localStorage.getItem('id');
     console.log("crear id: ", id);
+    this.carritoService.create(nombre).subscribe((resusuario: any) =>
+    {
+      console.log(resusuario);
+      this.router.navigate(['/principal/shopping']);
+    });
   }
+
 
 }

@@ -11,5 +11,10 @@ export class CarritoService {
   list(id : any) {
     return this.http.get(`${environment.API_URL}car/mostrarCarrito/${id}`);
   }
+ 
+  create(nombre: any) {
+    let id=localStorage.getItem('id');
+    return this.http.post(`${environment.API_URL}car/crearCarrito/`, {"UsuarioID":id,"Nombre":nombre});
+  }
 
 }

@@ -132,6 +132,14 @@ export class CarritoComponent implements OnInit{
       console.log(resusuario);
       this.router.navigate(['/principal/shopping']);
     });
+    
 
   }
+  mostrar(id: any) {
+    this.carritoService.list(id).subscribe((resusuario: any) =>
+    {
+      this.carritos = resusuario;
+  });
+  
+}
 }

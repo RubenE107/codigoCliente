@@ -23,3 +23,11 @@
   .est tbody tr:hover {
     background-color: #ddd;
   }
+  .anuncio{
+    background-color: #f2f2f2;
+    color: #333;
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+    font-family: 'Times New Roman', Times, serif;
+  }

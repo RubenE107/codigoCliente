@@ -28,13 +28,7 @@ export class CarritoComponent implements OnInit{
         console.log(this.carritos)
       },err => console.error(err)
       );
-      this.membresiaService.list().subscribe((resmembresia: any) =>
-      {
-        this.membresias = resmembresia;  
-        //console.log(resusuario);
-        console.log(this.membresias)
-      },err => console.error(err)
-      );
+      
       
       
       
@@ -50,7 +44,13 @@ export class CarritoComponent implements OnInit{
     
         });
     
-        
+        this.membresiaService.list().subscribe((resmembresia: any) =>
+      {
+        this.membresias = resmembresia;  
+        //console.log(resusuario);
+        console.log(this.membresias)
+      },err => console.error(err)
+      );
     
     
       }

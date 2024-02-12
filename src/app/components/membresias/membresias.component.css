@@ -1,31 +1,25 @@
-.est {
+.simple-futuristic {
     width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
-    font-family: 'Roboto', sans-serif;
-    background-color: #6e6b6b;
-    color: #fff;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
   }
   
-  .est th,
-  .est td {
-    padding: 10px;
+  .simple-futuristic th,
+  .simple-futuristic td {
+    padding: 8px;
+    border: 1px solid #ddd;
     text-align: left;
   }
   
-  .est th {
-    background-color: #7e7e7e;
-    color: #00bcd4;
-    font-weight: bold;
-    border: 1px solid #646262;
+  .simple-futuristic th {
+    background-color: #f2f2f2;
+    color: #333;
   }
   
-  .est td {
-    background-color: #808080;
-    border: 1px solid #7c7c7c;
+  .simple-futuristic tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
   }
   
-  .est tr:hover {
-    background-color: #747474;
+  .simple-futuristic tbody tr:hover {
+    background-color: #ddd;
   }
-  

@@ -3,6 +3,7 @@ import { DatePipe } from '@angular/common';
 import { CarritoService } from '../../services/carrito.service';
 import { Carrito } from '../../models/Carrito';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 declare var $: any;
 @Component({
   selector: 'app-carrito',
@@ -51,8 +52,35 @@ export class CarritoComponent implements OnInit{
     console.log("editar id: ", id);
   }
   eliminarCarrito(id: number){
-    console.log("eliminar id: ", id);
-    
+    console.log("Click en eliminar Carrito");
+    console.log("Identificador del Carrito: ",id);
+    Swal.fire({
+      title: "¿Estás seguro?",
+      text: "No es posible revertir esta accion!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Sí, quiero eliminarlo!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.carritoService.delete(id).subscribe((res: any) =>
+        {
+          console.log("res: ", res);
+          Swal.fire({
+            title: "Eliminado!",
+            text: "Tu archivo ha sido eliminado.",
+            icon: "success"
+          }).then(() => {
+            
+            location.reload();});
+        },
+        err => console.error(err)
+        );
+
+      
+      }
+    });
   }
   FCrear(){
     this.carrito = new Carrito();

@@ -58,8 +58,8 @@ export class AdminComponent implements OnInit{
     console.log("Click en eliminar usuario");
     console.log("Identificador del usuario: ",UsuarioID);
     Swal.fire({
-      title: "¿Estás seguro bro?",
-      text: "No es posible revertir este!",
+      title: "¿Estás seguro?",
+      text: "No es posible revertir esta accion!",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",

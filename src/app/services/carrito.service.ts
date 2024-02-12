@@ -16,5 +16,9 @@ export class CarritoService {
     let id=localStorage.getItem('id');
     return this.http.post(`${environment.API_URL}car/crearCarrito/`, {"UsuarioID":id,"Nombre":nombre});
   }
+  delete(id: any) {
+    return this.http.delete(`${environment.API_URL}car/eliminarCarrito/${id}`);
+    
+  }
 
 }

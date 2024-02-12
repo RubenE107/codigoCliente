@@ -25,16 +25,7 @@ export class MembresiasComponent {
     err => console.error(err)
     );
     
-  }
-  ngOnInit(): void 
-  {
-    $('.dropdown-trigger').dropdown();
-    console.log("entro");
-    $(document).ready(function()
-    {
-      $('.modal').modal();
-
-    });
+  
     this.membresiaService.list().subscribe((resUsuario: any) =>
     {
       this.membresia = resUsuario;  

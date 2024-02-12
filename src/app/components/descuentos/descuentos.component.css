@@ -1,0 +1,25 @@
+.est {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+  }
+  
+  .est th,
+  .est td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .est th {
+    background-color: #f2f2f2;
+    color: #333;
+  }
+  
+  .est tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .est tbody tr:hover {
+    background-color: #ddd;
+  }

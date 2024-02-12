@@ -1,1 +1,19 @@
-<p>descuentos works!</p>
+<table class="est" *ngIf="descuentos != undefined">
+    <thead>
+      <tr>
+        <th>Tipo de Descuento</th>
+        <th>Porcentaje</th>
+        <th>Fecha de Inicio</th>
+        <th>Fecha de Fin</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let descuento of descuentos">
+        <td>{{ descuento.TipoDescuento }}</td>
+        <td>{{ descuento.Porcentaje }}</td>
+        <td>{{ descuento.FechaInicio }}</td>
+        <td>{{ descuento.FechaFin }}</td>
+      </tr>
+    </tbody>
+  </table>
+  

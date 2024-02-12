@@ -1,25 +1,25 @@
-.simple-futuristic {
+.est {
     width: 100%;
     border-collapse: collapse;
     font-family: Arial, sans-serif;
   }
   
-  .simple-futuristic th,
-  .simple-futuristic td {
+  .est th,
+  .est td {
     padding: 8px;
     border: 1px solid #ddd;
     text-align: left;
   }
   
-  .simple-futuristic th {
+  .est th {
     background-color: #f2f2f2;
     color: #333;
   }
   
-  .simple-futuristic tbody tr:nth-child(even) {
+  .est tbody tr:nth-child(even) {
     background-color: #f9f9f9;
   }
   
-  .simple-futuristic tbody tr:hover {
+  .est tbody tr:hover {
     background-color: #ddd;
   }

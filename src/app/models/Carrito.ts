@@ -7,6 +7,7 @@ export class Carrito{
     "UsuarioID": number;
     "Nombre": string;
     "FechaCreacion": Date;
+    "TipoMembresia": string;
     constructor(){
         this.CarritoID = -1;
         this.UsuarioID = -1;
@@ -16,6 +17,7 @@ export class Carrito{
         this.PrecioUnitario = 0;
         this.Total = 0;
         this.MembresiaID = -1;
-        
+        this.TipoMembresia = "";
+
     }
 }

@@ -129,3 +129,19 @@
       </div>
   </div>
 </div>
+
+
+<div id="info" class="modal">
+    <div class="modal-content">
+        <h4>Detalles del Carrito</h4>
+        <p>Cantidad: {{ carrito.Cantidad }}</p>
+        <p>CarritoID: {{ carrito.CarritoID }}</p>
+        <p>MembresiaID: {{ carrito.MembresiaID }}</p>
+        <p>PrecioUnitario: {{ carrito.PrecioUnitario }}</p>
+        <p>TipoMembresia: "{{ carrito.TipoMembresia }}"</p>
+        <p>Total: {{ carrito.Total }}</p>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
+    </div>
+</div>
